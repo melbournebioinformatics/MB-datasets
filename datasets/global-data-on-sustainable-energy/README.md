@@ -11,13 +11,22 @@
 ## Download
 
 ```bash
-kaggle datasets download -d anshtanwar/global-data-on-sustainable-energy -p data --unzip
+# wget
+wget "https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/global-data-on-sustainable-energy/global-data-on-sustainable-energy%20%281%29.csv"
+
+# curl
+curl -O "https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/global-data-on-sustainable-energy/global-data-on-sustainable-energy%20%281%29.csv"
 ```
 
 ```python
-from kaggle.api.kaggle_api_extended import KaggleApi
-api = KaggleApi(); api.authenticate()
-api.dataset_download_files("anshtanwar/global-data-on-sustainable-energy", path="data", unzip=True)
+# Python / pandas
+import pandas as pd
+df = pd.read_csv("https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/global-data-on-sustainable-energy/global-data-on-sustainable-energy%20%281%29.csv")
+```
+
+```r
+# R
+df <- read.csv("https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/global-data-on-sustainable-energy/global-data-on-sustainable-energy%20%281%29.csv")
 ```
 
 ## Provenance

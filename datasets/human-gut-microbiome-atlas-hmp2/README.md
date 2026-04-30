@@ -10,14 +10,25 @@ Deep Metagenomics of Crohn's Disease & Ulcerative Colitis
 
 ## Download
 
+> **Note:** This file is ~8 MB; download may take a moment.
+
 ```bash
-kaggle datasets download -d qasimhu/human-gut-microbiome-atlas-hmp2 -p data --unzip
+# wget
+wget https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/human-gut-microbiome-atlas-hmp2/hmp2_ibd_metagenomics_atlas_20260219_121629.csv
+
+# curl
+curl -O https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/human-gut-microbiome-atlas-hmp2/hmp2_ibd_metagenomics_atlas_20260219_121629.csv
 ```
 
 ```python
-from kaggle.api.kaggle_api_extended import KaggleApi
-api = KaggleApi(); api.authenticate()
-api.dataset_download_files("qasimhu/human-gut-microbiome-atlas-hmp2", path="data", unzip=True)
+# Python / pandas
+import pandas as pd
+df = pd.read_csv("https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/human-gut-microbiome-atlas-hmp2/hmp2_ibd_metagenomics_atlas_20260219_121629.csv")
+```
+
+```r
+# R
+df <- read.csv("https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/human-gut-microbiome-atlas-hmp2/hmp2_ibd_metagenomics_atlas_20260219_121629.csv")
 ```
 
 ## Provenance

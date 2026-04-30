@@ -14,13 +14,34 @@ Microbiome data for colorectal cancer ML classification (60 samples)
 ## Download
 
 ```bash
-kaggle datasets download -d aramelheni/crc-gut-microbiome-ml-data -p data --unzip
+BASE=https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/crc-gut-microbiome-ml-data
+
+# wget
+wget "$BASE/metadata.csv"
+wget "$BASE/seqtab_nochim_export.xlsx"
+wget "$BASE/taxa_species_export.xlsx"
+
+# curl
+curl -O "$BASE/metadata.csv"
+curl -O "$BASE/seqtab_nochim_export.xlsx"
+curl -O "$BASE/taxa_species_export.xlsx"
 ```
 
 ```python
-from kaggle.api.kaggle_api_extended import KaggleApi
-api = KaggleApi(); api.authenticate()
-api.dataset_download_files("aramelheni/crc-gut-microbiome-ml-data", path="data", unzip=True)
+# Python / pandas — metadata only (CSV)
+import pandas as pd
+base = "https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/crc-gut-microbiome-ml-data"
+meta = pd.read_csv(f"{base}/metadata.csv")
+seqtab = pd.read_excel(f"{base}/seqtab_nochim_export.xlsx", index_col=0)
+taxa = pd.read_excel(f"{base}/taxa_species_export.xlsx", index_col=0)
+```
+
+```r
+# R
+base <- "https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/crc-gut-microbiome-ml-data"
+meta <- read.csv(paste0(base, "/metadata.csv"))
+# xlsx files require readxl or openxlsx:
+# library(readxl); seqtab <- read_excel(tempfile_from_url(...))
 ```
 
 ## Provenance

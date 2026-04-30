@@ -11,13 +11,22 @@ Realistic medical insurance claims dataset with ICD-10, CPT codes.
 ## Download
 
 ```bash
-kaggle datasets download -d nudratabbas/healthcare-fraud-detection-dataset -p data --unzip
+# wget
+wget https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/healthcare-fraud-detection-dataset/healthcare_fraud_detection.csv
+
+# curl
+curl -O https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/healthcare-fraud-detection-dataset/healthcare_fraud_detection.csv
 ```
 
 ```python
-from kaggle.api.kaggle_api_extended import KaggleApi
-api = KaggleApi(); api.authenticate()
-api.dataset_download_files("nudratabbas/healthcare-fraud-detection-dataset", path="data", unzip=True)
+# Python / pandas
+import pandas as pd
+df = pd.read_csv("https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/healthcare-fraud-detection-dataset/healthcare_fraud_detection.csv")
+```
+
+```r
+# R
+df <- read.csv("https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/healthcare-fraud-detection-dataset/healthcare_fraud_detection.csv")
 ```
 
 ## Provenance

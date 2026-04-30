@@ -11,13 +11,22 @@ Predict the onset of diabetes based on diagnostic measures
 ## Download
 
 ```bash
-kaggle datasets download -d uciml/pima-indians-diabetes-database -p data --unzip
+# wget
+wget https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/pima-indians-diabetes-database/diabetes.csv
+
+# curl
+curl -O https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/pima-indians-diabetes-database/diabetes.csv
 ```
 
 ```python
-from kaggle.api.kaggle_api_extended import KaggleApi
-api = KaggleApi(); api.authenticate()
-api.dataset_download_files("uciml/pima-indians-diabetes-database", path="data", unzip=True)
+# Python / pandas
+import pandas as pd
+df = pd.read_csv("https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/pima-indians-diabetes-database/diabetes.csv")
+```
+
+```r
+# R
+df <- read.csv("https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/pima-indians-diabetes-database/diabetes.csv")
 ```
 
 ## Provenance

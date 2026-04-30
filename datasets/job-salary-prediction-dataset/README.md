@@ -10,14 +10,25 @@ A large-scale dataset for analyzing job roles, experience, skills, and salary.
 
 ## Download
 
+> **Note:** This file is ~16 MB; download may take a moment.
+
 ```bash
-kaggle datasets download -d nalisha/job-salary-prediction-dataset -p data --unzip
+# wget
+wget https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/job-salary-prediction-dataset/job_salary_prediction_dataset.csv
+
+# curl
+curl -O https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/job-salary-prediction-dataset/job_salary_prediction_dataset.csv
 ```
 
 ```python
-from kaggle.api.kaggle_api_extended import KaggleApi
-api = KaggleApi(); api.authenticate()
-api.dataset_download_files("nalisha/job-salary-prediction-dataset", path="data", unzip=True)
+# Python / pandas
+import pandas as pd
+df = pd.read_csv("https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/job-salary-prediction-dataset/job_salary_prediction_dataset.csv")
+```
+
+```r
+# R
+df <- read.csv("https://raw.githubusercontent.com/melbournebioinformatics/MB-datasets/main/datasets/job-salary-prediction-dataset/job_salary_prediction_dataset.csv")
 ```
 
 ## Provenance
